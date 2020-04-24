@@ -2,78 +2,90 @@
 
 using namespace std;
 
-
 int main() {
+    string book_name, book_author;
+    int book_pages;
 
-Book k1;
+	Book p;
+	cout << "Dannie book: " << endl;
+	p.print();
+	cout << "\nVvedite novie dannie book:"<<endl;
+	cout << "Nazvanie book: ";
+	cin >> book_name;
+	p.SetName(book_name);
+	cout << "Author book: ";
+	cin >> book_author;
+	p.SetAuthor(book_author);
+	cout << "Kolichestvo pages: ";
+	a:
+	cin >> book_pages;
+	if (book_pages<0)
+    {
+    cout << "Chislo nekkorektno, vvedite korrektnoe chislo"<< endl<<endl;
+    goto a;
+    }
+	p.SetPages(book_pages);
+	cout << "\nNovie dannie book: " << endl;
+	cout << "Nazvanie book: " << p.GetName() << "\nAuthor book: " << p.GetAuthor() << "\nKolichestvo pages: " << p.GetPages() << endl;
+	Book p2("Gore ot uma","Vakhrushev ninja",148);
+	cout << "\nDannie vtorogo book: " << endl;
+	p2.print();
+	cout << "\nDannie tretiei (copy) book: " << endl;
+	Book p3 = p2;
+	p3.print();
 
-k1.SetName("PishemNaC++");
-k1.SetAuthor("Romanchuk");
-k1.SetPages(1337);
-k1.print();
-cout << "Name first: " << k1.GetName() << endl;
-cout << "Author first: "<< k1.GetAuthor() << endl;
-cout << "Pages: " << k1.GetPages() << endl;
+    cout << endl << endl;
 
-Book k;
-k.SetName("SpisivaemLabi");
-k.SetAuthor("Vahrushev");
-k.SetPages(1488);
-k.print();
+    p.operator++();
+    cout << "Operator++" << endl;
+    p.print();
+    cout << endl;
 
-cout << " ----------getters" << endl;
-cout << "Name: " << k.GetName() << endl;
-cout << "Author: " << k.GetAuthor() << endl;
-cout <<"Pages: " << k.GetPages() << endl;
+    p.operator--();
+    cout << "Operator--" << endl;
+    p.print();
+    p3.SetName("Idiot");
+    p3.SetAuthor("Dostoevskii");
+    p3.SetPages(99999);
+    cout << endl;
 
-k.print();
-cout << " ----------copyConstruct" << endl;
+    cout << "Operator=" << endl;
+    p3.print();
+    cout << endl;
+    p3 = p;
+    p3.print();
+    cout << endl;
 
-k.print();
+    cout << "Nachalniy object: " << endl;
+    p.print();
+    cout << endl;
+    cout << "Copy object: " << endl;
+    p3.print();
+    cout << endl;
 
-cout << "=" << endl;
-cout << "Input\n" << "Name\nAuthor\nPages\n" << endl;
-cin >>k;
-k.print();
+    cout << "Operator==" << endl;
+    bool obj = p == p3;
+    cout << "bool is " << obj << endl;
+    cout << endl;
 
-cout << "k " << endl;
-k1.print();
-cout << "k1 " <<endl;
+    cout << "Operator!=" << endl;
+    obj = p != p3;
+    cout << "bool is " << obj << endl;
+    cout << endl;
 
-k.operator++();
-cout << "++" << endl;
-k.print();
+    cout << "Operator> (pages) " << endl;
+    obj = p > p3;
+    cout << "bool is " << obj << endl;
+    cout << endl;
 
-k.operator--();
-cout << "--" << endl;
-k.print();
+    cout << "Operator< (pages) " << endl;
+    obj = p < p3;
+    cout << "bool is " << obj << endl;
+    cout << endl;
 
-k.SetName("name2");
-k.SetAuthor("author2");
-k.SetPages(1);
+    cout << "Operator<< (Vvedenniy object) " << endl;
+    cout << p << endl << endl;
 
-cout << "==" << endl;
-bool t = k == k1;
-cout << "bool is " << t << endl;
 
-cout << "!=" << endl;
-t = k != k1;
-cout << "bool is " << t << endl;
-
-cout << "> (pages) " << endl;
-t = k > k1;
-cout << "bool is " << t << endl;
-
-cout << "< (pages) " << endl;
-t = k < k1;
-cout << "bool is " << t << endl;
-
-cout << "Vivod copy (k1) " << endl;
-cout << k << endl;
-
-cout << "Vvod (k1) " << endl;
-cout << "bool is " <<  k1 << endl;
-
-k.print();
-return 0;
+	return 0;
 }
