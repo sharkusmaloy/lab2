@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1587103794 source:f:\program files\codeblocks\Работы\2 лаба 2\lib.cpp
+	"lib.h"
+
+1587137428 f:\program files\codeblocks\Работы\2 лаба 2\lib.h
+	<iostream>
+	<windows.h>
+	<string>
+	<stdbool.h>
+
+1587137618 source:f:\program files\codeblocks\Работы\2 лаба 2\main.cpp
+	"lib.h"
+
+1587743553 source:f:\program files\codeblocks\Работы\lab2\lib.cpp
+	"lib.h"
+
+1587743382 f:\program files\codeblocks\Работы\lab2\lib.h
+	<iostream>
+	<windows.h>
+	<string>
+	<stdbool.h>
+
+1587743775 source:f:\program files\codeblocks\Работы\lab2\main.cpp
+	"lib.h"
+
