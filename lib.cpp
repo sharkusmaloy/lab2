@@ -29,15 +29,15 @@
     if(book_pages > 0)
     pages = book_pages;
     }
-    void Book::print() {
+    void Book::print() const {
     cout<< "Name: "<< GetName() << endl;
     cout<< "Author: "<< GetAuthor() << endl;
     cout << "Pages: " << GetPages() << endl;
     }
 
-	string Book::GetName() { return name; }
-	string Book::GetAuthor() { return author; }
-	int Book::GetPages() { return pages; }
+	string Book::GetName() const  { return name; }
+	string Book::GetAuthor() const { return author; }
+	int Book::GetPages() const { return pages; }
 
 	Book & Book::operator=(const Book &book) {
 		if (&book == this)
