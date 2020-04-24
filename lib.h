@@ -18,11 +18,11 @@ Book();
 Book(const string book_name,const string book_author, int book_pages);
 Book(const Book &a);
 
-void print() const ;
+void print() const;
 void SetName(const string book_name);
 void SetAuthor(const string book_author);
-void SetPages(int book_pages);
-string GetName() const;
+bool SetPages(int book_pages);
+string GetName() const ;
 string GetAuthor() const;
 int GetPages() const;
 
