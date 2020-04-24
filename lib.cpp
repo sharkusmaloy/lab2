@@ -3,9 +3,12 @@
 	Book::Book() {
 		name = "Book";
 		author = "Author";
-		pages = 2;
+		pages = 0;
 	}
-    Book::Book(string book_name, string book_author, int book_pages){
+    Book::Book(string book_name, string book_author, int book_pages)
+    {
+        if (!SetPages(book_pages))
+        pages=0;
 		SetName (book_name);
 		SetAuthor (book_author);
 		SetPages (book_pages);
@@ -25,9 +28,12 @@
     author = book_author;
     }
 
-	void Book::SetPages(int book_pages) {
-    if(book_pages > 0)
+	bool Book::SetPages (int book_pages)
+    {
+    if(book_pages< 0)
+    return false;
     pages = book_pages;
+    return true;
     }
     void Book::print() const {
     cout<< "Name: "<< GetName() << endl;
@@ -35,7 +41,7 @@
     cout << "Pages: " << GetPages() << endl;
     }
 
-	string Book::GetName() const  { return name; }
+	string Book::GetName() const { return name; }
 	string Book::GetAuthor() const { return author; }
 	int Book::GetPages() const { return pages; }
 
@@ -85,5 +91,3 @@
     in >> book.pages;
     return in;
     }
-
-
